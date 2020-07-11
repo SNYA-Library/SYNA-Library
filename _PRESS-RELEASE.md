@@ -17,28 +17,35 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > News web application.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > This app is for users who like to keep themselves up to date with what is gonig on around the world.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > a news web application that allows users to read latest news and browse news from around the world with the abillity to create an     account and control his news feed. Using a news API to get the news.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > There is no integrated web application that allows users to browse news from differect sources  
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > The product deals with an API that sends NEWS headings and articles from various sources and various dates and filtering data to deliver to the user the best experience for News browsing
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > 'We believe in the freedom and accessibility of information'
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > To use this app like intended the user shoud first sign up to get the full experience and unlock all features 
+  > the home page is a page of the braeking news currently in the world and is updated from time to time
+  > Articles is the page of the all articles available on our website which the user can browse
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > 'I can find all kindes of breaking news on this site based on several sources'
+  > or
+  > 'there are hundreds of articles on this site that I can browse easily'
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Before the wrap up I would like to say that the whole app can be built using front-end only (if we use google sign in) by sending fetch requests to the api directly and dealing with the response 
+  > To wrap up the user should start by browsing the main headinsg of the current news and to navegate his way from there.
+  > this app can be run locally using npm install --------> npm start
+  
