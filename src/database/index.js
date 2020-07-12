@@ -56,3 +56,5 @@ const newsDoc = new NewsModel({
 // .catch((err) => {
 //     console.log("err in saving data", err)
 // })
+
+module.exports.NewsModel = NewsModel;
