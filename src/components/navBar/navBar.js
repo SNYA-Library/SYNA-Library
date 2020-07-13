@@ -75,7 +75,7 @@ class NavBar extends React.Component {
         <Router>
             <nav>
                 <ul>
-                    <li onClick={this.handleHeadersClick.bind(this)}><Link to="/headers">HeadLines</Link></li>
+                    <li onClick={this.handleHeadersClick.bind(this)}><Link to="/">HeadLines</Link></li>
                     <li onClick={this.handleArticlesClick.bind(this)}><Link to='/articles'>Articles</Link></li>
                 </ul>
             </nav>
@@ -84,7 +84,7 @@ class NavBar extends React.Component {
                 <Search callbackfromNavBar = {this.searchCallback.bind(this)} />
                     <AllArticles articles = {this.state.articles} />
                 </Route>
-                <Route path='/headers'>
+                <Route path='/'>
                     <AllHeaders headers = {this.state.headers} />
                 </Route>
             </Switch>
