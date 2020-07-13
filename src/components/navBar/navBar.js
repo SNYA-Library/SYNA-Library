@@ -8,15 +8,19 @@ import {
 
 import AllArticles from '../articles/allArticles.js';
 import AllHeaders from '../headers/allHeaders.js';
+import Search from '../search/search.js'
 
 class NavBar extends React.Component {
     state = {
         articles: [],
-        headers: []
+        headers: [],
+        searchValue: ''
     }
-    handleArticlesClick() {
+    handleArticlesClick(searchValue) {
+        console.log('we At handleArticlesClick');
+        var query = this.state.searchValue || 'Web development';
         var url = 'http://newsapi.org/v2/everything?' +
-        'q=Palestine&' +
+        'q=' + query + '&' +
         'from=2020-07-12&' +
         'sortBy=popularity&' +
         'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
@@ -46,20 +50,26 @@ class NavBar extends React.Component {
             }))
         })
     }
+    searchCallback(searchValue) {
+        console.log('we At searchCallback');
+        this.setState({searchValue: searchValue});
+        this.handleArticlesClick(searchValue);
+    }
     render() {
         return (
         <Router>
             <nav>
                 <ul>
-                    <li onClick={this.handleHeadersClick.bind(this)}><Link to="/headers">HeadLines</Link></li>
+                    <li onClick={this.handleHeadersClick.bind(this)}><Link to="/">HeadLines</Link></li>
                     <li onClick={this.handleArticlesClick.bind(this)}><Link to='/articles'>Articles</Link></li>
                 </ul>
             </nav>
             <Switch>
                 <Route path ='/articles'>
+                <Search callbackfromNavBar = {this.searchCallback.bind(this)} />
                     <AllArticles articles = {this.state.articles} />
                 </Route>
-                <Route path='/headers'>
+                <Route path='/'>
                     <AllHeaders headers = {this.state.headers} />
                 </Route>
             </Switch>

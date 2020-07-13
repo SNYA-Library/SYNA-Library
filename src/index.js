@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 // import GetAllArticles from './components/articles/getAllArticles.js';
 // import AllArticles from './components/articles/allArticles.js';
-import NavBar from './components/navBar/navBar.js';
 
 
 ReactDOM.render(
@@ -14,7 +13,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-ReactDOM.render(<NavBar />, document.getElementById('navBar'));
+// ReactDOM.render(<NavBar />, document.getElementById('navBar'));
 
 // ReactDOM.render(<GetAllArticles />, document.getElementById('getArticles'));
 // ReactDOM.render(<AllArticles />, document.getElementById('articles'));
