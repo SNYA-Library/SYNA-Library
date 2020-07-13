@@ -16,7 +16,7 @@ class NavBar extends React.Component {
     }
     handleArticlesClick() {
         var url = 'http://newsapi.org/v2/everything?' +
-        'q=Apple&' +
+        'q=Palestine&' +
         'from=2020-07-12&' +
         'sortBy=popularity&' +
         'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';

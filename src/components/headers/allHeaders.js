@@ -9,19 +9,21 @@ class AllHeaders extends React.Component {
         const { headers } = this.props;
         return (
             <div>
-                <ul>
-                    {headers.map((header) => (
-                        <li>
-                        <strong>Author</strong>: {header.author}<br></br>
-                        <strong>Content</strong>: {header.content}<br></br>
-                        <strong>description</strong>: {header.description}<br></br>
-                        <strong>Source</strong>: {header.source.name}<br></br>
-                        <strong>title</strong>: {header.title} <br></br>
-                        <strong>url</strong>: {header.url}
-                        <img src={header.urlToImage}></img>
-                        </li>
-                    ))}
-                </ul>
+                <div>
+                    <ul class='ulContainer'>
+                        {headers.map((header) => (
+                            <li class='headersCard'>
+                            <img class='headersImg' src={header.urlToImage}></img>
+                            <strong>Author</strong>: {header.author}<br></br>
+                            <strong>Content</strong>: {header.content}<br></br>
+                            <strong>description</strong>: {header.description}<br></br>
+                            <strong>Source</strong>: {header.source.name}<br></br>
+                            <strong>title</strong>: {header.title} <br></br>
+                            <strong>url</strong>: <a href={header.url}>{header.url}</a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         )
     }
