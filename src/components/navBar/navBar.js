@@ -14,8 +14,23 @@ class NavBar extends React.Component {
     state = {
         articles: [],
         headers: [],
-        searchValue: ''
+        searchValue: '',
     }
+    componentDidMount(){
+        var url = 'http://newsapi.org/v2/top-headlines?' +
+                  'country=us&' +
+                  'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
+
+        var req = new Request(url);
+        let fetchReq = fetch(req);
+        // console.log(fetchReq);
+        fetchReq.then((data) => {
+            console.log(data.json().then((data1) => {
+                console.log(data1.articles);
+                return this.setState({headers: data1.articles});
+            }))
+        })
+	}
     handleArticlesClick(searchValue) {
         console.log('we At handleArticlesClick');
         var query = this.state.searchValue || 'Web development';
@@ -60,7 +75,7 @@ class NavBar extends React.Component {
         <Router>
             <nav>
                 <ul>
-                    <li onClick={this.handleHeadersClick.bind(this)}><Link to="/">HeadLines</Link></li>
+                    <li onClick={this.handleHeadersClick.bind(this)}><Link to="/headers">HeadLines</Link></li>
                     <li onClick={this.handleArticlesClick.bind(this)}><Link to='/articles'>Articles</Link></li>
                 </ul>
             </nav>
@@ -69,7 +84,7 @@ class NavBar extends React.Component {
                 <Search callbackfromNavBar = {this.searchCallback.bind(this)} />
                     <AllArticles articles = {this.state.articles} />
                 </Route>
-                <Route path='/'>
+                <Route path='/headers'>
                     <AllHeaders headers = {this.state.headers} />
                 </Route>
             </Switch>
