@@ -14,12 +14,13 @@ class AllHeaders extends React.Component {
                         {headers.map((header) => (
                             <li class='headersCard'>
                             <img class='headersImg' src={header.urlToImage}></img>
-                            <strong>Author</strong>: {header.author}<br></br>
-                            <strong>Content</strong>: {header.content}<br></br>
+                            {/* <strong>Author</strong>: {header.author}<br></br> */}
+                            {/* <strong>Content</strong>: {header.content}<br></br> */}
+                            <strong>title</strong>: {header.title} <br></br>
                             <strong>description</strong>: {header.description}<br></br>
                             <strong>Source</strong>: {header.source.name}<br></br>
-                            <strong>title</strong>: {header.title} <br></br>
-                            <strong>url</strong>: <a href={header.url}>{header.url}</a>
+                            {/* <strong>title</strong>: {header.title} <br></br> */}
+                            {/* <strong>url</strong>: <a href={header.url}>{header.url}</a> */}
                             </li>
                         ))}
                     </ul>
