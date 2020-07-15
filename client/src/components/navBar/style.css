@@ -1,0 +1,9 @@
+nav {
+  justify-content: space-between;
+}
+.Nav__login {
+  align-self: end;
+margin-right: 29px;
+height: 230px;
+margin-left: 965px;
+}
