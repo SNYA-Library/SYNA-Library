@@ -19,7 +19,7 @@ class AllHeaders extends React.Component {
                             <strong>description</strong>: {header.description}<br></br>
                             <strong>Source</strong>: {header.source.name}<br></br>
                             <strong>title</strong>: {header.title} <br></br>
-                            <strong>url</strong>: <a href={header.url}>{header.url}</a>
+                            <strong>url</strong>: <a target="_blank" href={header.url}>{header.url}</a>
                             </li>
                         ))}
                     </ul>
