@@ -9,6 +9,9 @@ import {
 import AllArticles from '../articles/allArticles.js';
 import AllHeaders from '../headers/allHeaders.js';
 import Search from '../search/search.js'
+import logo from './logo.PNG'
+
+
 
 class NavBar extends React.Component {
     state = {
@@ -74,7 +77,10 @@ class NavBar extends React.Component {
         return (
         <Router>
             <nav>
+                
                 <ul>
+                    <li> <img src={logo} className="logo " alt="Logo"/></li>
+                    <li onClick={this.handleHeadersClick.bind(this)}><Link to="/"> SNAY News</Link></li>
                     <li onClick={this.handleHeadersClick.bind(this)}><Link to="/">HeadLines</Link></li>
                     <li onClick={this.handleArticlesClick.bind(this)}><Link to='/articles'>Articles</Link></li>
                 </ul>
