@@ -12,7 +12,15 @@ const app = express();
 // Bodyparser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(cors());
+
+
+
+
+
 
 
 
@@ -24,16 +32,16 @@ mongoose.connect(db,{ useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
-app.get('/', (req, res) => {
-  res.send('BackEnd Server for News application project');
-})
+// app.get('/', (req, res) => {
+//   res.send('BackEnd Server for News application project');
+// })
 
 app.use("/api/users", users);
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build' ,'index'))
+    res.sendFile(path.resolve(__dirname, 'client', 'build' ,'index.html'))
   })
 }
 
