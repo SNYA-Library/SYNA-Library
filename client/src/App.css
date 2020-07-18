@@ -1,7 +1,13 @@
-
+/*
 nav {
     background-color: rgb(241, 228, 228);
     overflow: hidden;
+} */
+nav {
+      height: 69px;
+}
+.navbar {
+  margin-bottom: -18px;
 }
 nav ul {
   list-style: none;
@@ -13,17 +19,17 @@ nav ul {
   margin-left: 25px;
   font-size: 20px;
   color: white;
-  border: 1px solid black;
 }
-
+/*
 ul {
   list-style: none;
-}
+} */
 
 .headersCard {
   margin: 13px;
   width: 350px;
-  background-color: rgb(241, 228, 228);
+  height: 200px;
+  /* background-color: rgb(241, 228, 228); */
   border-radius: 15px;
   margin-left: 40px;
 }
@@ -41,13 +47,14 @@ ul {
   font-size: large;
 }
 .articlesImg {
-  width: 100px;
+  width: 25%;
+  height: 118px;
   display: block;
   float: left;
 }
 .articlesCard {
   margin-bottom: 5px;
-  display: flex;
+  /* display: flex; */
   width: 900px;
   height: auto;
   margin-left: 80px;
@@ -66,4 +73,16 @@ ul {
   justify-content: space-between;
   bottom: 0;
   left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .SignUp-page__div {
+      width: 50%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .SignUp-page__div {
+      width: 90%;
+    }
 }

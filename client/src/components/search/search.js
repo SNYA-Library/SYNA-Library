@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import './style.css'
 class Search extends React.Component {
     state = {
         searchValue: ''
@@ -18,9 +18,10 @@ class Search extends React.Component {
         const { callbackfromNavBar } = this.props;
         return (
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <label>Query Articles: </label>
-                <input type='search' name='search' name='searchValue' value={this.state.searchValue} onChange={this.handleChange.bind(this)}></input>
-                <button type='submit' >Search Articles</button>
+
+                <input type='search' name='search' name='searchValue' value={this.state.searchValue} onChange={this.handleChange.bind(this)} className="Search__input" placeholder="Search by keyword"></input>
+                <button type='submit' className="btn waves-effect waves-light" type="submit" name="action">Search Articles</button>
+
             </form>
         )
     }

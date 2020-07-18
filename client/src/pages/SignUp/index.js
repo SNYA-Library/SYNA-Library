@@ -30,12 +30,14 @@ export default class SignUp extends Component {
         console.log(result, "result");
         console.log('New user saved to database');
         this.setState({redirect: '/articles'});
+        this.props.handleLogin();
       })
       .catch((err) => {
-        console.log("err in sending data from axios to db: ", err);
+        console.log("err in sending data from axios to db: ", err.response);
       });
   }
   render() {
+
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />
     }
@@ -48,7 +50,7 @@ export default class SignUp extends Component {
 
           <input
             name='name'
-            placeholder='Enter yor name'
+            placeholder=''
             className='SignUp-page__input'
             onChange={this.handleChange.bind(this)}
           />
@@ -58,9 +60,9 @@ export default class SignUp extends Component {
           </label>
 
           <input
-            name='email' 
+            name='email'
             type='email'
-            placeholder='Enter your Email'
+            placeholder=''
             className='SignUp-page__input'
             onChange={this.handleChange.bind(this)}
           />
@@ -69,9 +71,9 @@ export default class SignUp extends Component {
             Password
           </label>
           <input
-            name='password' 
+            name='password'
             type='password'
-            placeholder='Must be at least 6 chars'
+            placeholder=''
             className='SignUp-page__input'
             onChange={this.handleChange.bind(this)}
           />
@@ -80,17 +82,19 @@ export default class SignUp extends Component {
             Confirm Password
           </label>
           <input
-            name='password2' 
+            name='password2'
             type="password"
-            placeholder='Enter passowrd again'
+            placeholder=''
             className='SignUp-page__input'
             onChange={this.handleChange.bind(this)}
           />
-          <button
-            className='SignUp-page__button'
+          <button className="SignUp-page__button"
+
             onClick={this.submit.bind(this)}
           >
+
             Sign up
+
           </button>
         </div>
       </div>

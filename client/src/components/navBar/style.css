@@ -7,3 +7,12 @@ margin-right: 29px;
 height: 230px;
 margin-left: 965px;
 }
+
+.Nav__articles {
+  margin-left: 182px;
+}
+
+
+nav ul a {
+  font-size: 27px;
+}

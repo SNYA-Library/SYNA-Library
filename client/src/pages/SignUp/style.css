@@ -7,11 +7,15 @@
 .SignUp-page__div {
   width: 32%;
   text-align: center;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 144px 32px;
   margin: -16px 428px;
-  background-color: #ccc;
+  /* background-color: #ccc; */
   height: 620px;
+}
+
+label {
+    font-size: 15px;
 }
 
 .SignUp-page__label {
@@ -30,7 +34,7 @@
 }
 
 .SignUp-page__button {
-  background-color: #313131;
+  background-color: #ee6e73;
   font-family: Raleway-SemiBold;
   border: none;
   color: white;
