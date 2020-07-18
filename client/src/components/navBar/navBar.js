@@ -27,7 +27,7 @@ class NavBar extends React.Component {
     componentDidMount(){
         //------------- Headers ------------------//
 
-        var url = 'http://newsapi.org/v2/top-headlines?' +
+        var url = 'https://newsapi.org/v2/top-headlines?' +
                   'country=us&' +
                   'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
 
@@ -42,7 +42,7 @@ class NavBar extends React.Component {
         //------------ Articles ---------------//
 
         var query = this.state.searchValue || 'Web development'; // web development as default search query
-        var url2 = 'http://newsapi.org/v2/everything?' +
+        var url2 = 'https://newsapi.org/v2/everything?' +
         'q=' + query + '&' +
         'from=2020-07-12&' +
         'sortBy=popularity&' +
@@ -61,7 +61,7 @@ class NavBar extends React.Component {
     handleArticlesClick(searchValue) {
 
         var query = this.state.searchValue || 'Web development';
-        var url = 'http://newsapi.org/v2/everything?' +
+        var url = 'https://newsapi.org/v2/everything?' +
         'q=' + query + '&' +
         'from=2020-07-12&' +
         'sortBy=popularity&' +
@@ -78,7 +78,7 @@ class NavBar extends React.Component {
     }
     handleHeadersClick () {
 
-        var url = 'http://newsapi.org/v2/top-headlines?' +
+        var url = 'https://newsapi.org/v2/top-headlines?' +
             'country=us&' +
             'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
 
