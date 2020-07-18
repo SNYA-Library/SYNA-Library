@@ -14,15 +14,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(cors());
-
-
-
-
-
-
-
 
 // DB Config
 const db = require("./config/key").mongoURI;
@@ -30,11 +22,7 @@ const db = require("./config/key").mongoURI;
 // Connect to MongoDB
 mongoose.connect(db,{ useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
-
-// app.get('/', (req, res) => {
-//   res.send('BackEnd Server for News application project');
-// })
+  .catch(err => console.log('Error in connecting to DB', err));
 
 app.use("/api/users", users);
 
@@ -45,7 +33,7 @@ if(process.env.NODE_ENV === 'production'){
   })
 }
 
-  // Passport middleware
+// Passport middleware
 app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);

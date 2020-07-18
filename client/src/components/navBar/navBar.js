@@ -15,6 +15,7 @@ import './style.css'
 import AllArticles from '../articles/allArticles.js';
 import AllHeaders from '../headers/allHeaders.js';
 import Search from '../search/search.js'
+import key from '../../config/key.js'
 
 class NavBar extends React.Component {
     state = {
@@ -27,9 +28,7 @@ class NavBar extends React.Component {
     componentDidMount(){
         //------------- Headers ------------------//
 
-        var url = 'http://newsapi.org/v2/top-headlines?' +
-                  'country=us&' +
-                  'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
+        var url = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${key.apiKey}`;
 
         var req = new Request(url);
         let fetchReq = fetch(req);
@@ -42,11 +41,7 @@ class NavBar extends React.Component {
         //------------ Articles ---------------//
 
         var query = this.state.searchValue || 'Web development'; // web development as default search query
-        var url2 = 'http://newsapi.org/v2/everything?' +
-        'q=' + query + '&' +
-        'from=2020-07-12&' +
-        'sortBy=popularity&' +
-        'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
+        var url2 = `http://newsapi.org/v2/everything?q=${query}&from=2020-07-12&sortBy=popularity&apiKey=${key.apiKey}`;
 
         var req2 = new Request(url2);
         let fetchReq2 = fetch(req2);
@@ -61,11 +56,7 @@ class NavBar extends React.Component {
     handleArticlesClick(searchValue) {
 
         var query = this.state.searchValue || 'Web development';
-        var url = 'http://newsapi.org/v2/everything?' +
-        'q=' + query + '&' +
-        'from=2020-07-12&' +
-        'sortBy=popularity&' +
-        'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
+        var url = `http://newsapi.org/v2/everything?q=${query}&from=2020-07-12&sortBy=popularity&apiKey=${key.apiKey}`;
 
         var req = new Request(url);
         let fetchReq = fetch(req);
@@ -78,9 +69,7 @@ class NavBar extends React.Component {
     }
     handleHeadersClick () {
 
-        var url = 'http://newsapi.org/v2/top-headlines?' +
-            'country=us&' +
-            'apiKey=cc3bbf80787c4c7ea91e7dcc8b051692';
+        var url = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${key.apiKey}`;
 
         var req = new Request(url);
         let fetchReq = fetch(req);

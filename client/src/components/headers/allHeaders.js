@@ -1,5 +1,4 @@
 import React from 'react';
-import AllArticles from '../articles/allArticles';
 import './style.css'
 
 class AllHeaders extends React.Component {
@@ -25,7 +24,7 @@ class AllHeaders extends React.Component {
                             <span className="card-title">{header.title}</span>
 
                             <div className="card-content">
-                            <strong>description</strong>: {header.description}<br></br>
+                            <strong>Description</strong>: {header.description}<br></br>
                             </div>
                             <strong>Source</strong>: {header.source.name}<br></br>
                             <div className="card-action">
