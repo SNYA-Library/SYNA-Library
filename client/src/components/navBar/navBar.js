@@ -53,7 +53,7 @@ class NavBar extends React.Component {
             }))
         })
 	}
-    handleArticlesClick(searchValue) {
+    handleArticlesClick() {
 
         var query = this.state.searchValue || 'Web development';
         var url = `http://newsapi.org/v2/everything?q=${query}&from=2020-07-12&sortBy=popularity&apiKey=${key.apiKey}`;
